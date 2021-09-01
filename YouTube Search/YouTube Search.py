@@ -1,13 +1,8 @@
 # < Техническая часть >
 from selenium import webdriver
-driver = webdriver.Chrome('C:/Users/Лев/Desktop/YouTube Search/DriverChrome/chromedriver.exe')
+driver = webdriver.Chrome('C:/Users/Family/Desktop/YouTube Search/DriverChrome/chromedriver.exe')
 
 # < Графическая часть >
-from tkinter import *
-root = Tk()
-button = Button(root, text="Click me!", fg="red", bg="yellow")
-button.pack()
-root.mainloop()
 
 # < Поиск видео >
 driver.get('https://www.youtube.com/') # ссылка сайта, на котором будет выполняться действие
@@ -17,8 +12,8 @@ button = driver.find_element_by_xpath('//*[@id="search-icon-legacy"]/yt-icon') #
 button.click() # поиск > клик
 
 # Сортировка видео (1 - По релевантности, 2 - По дате загрузки, 3 - По числу просмотров, 4 - По рейтингу)
-filtr0 = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/div/ytd-toggle-button-renderer/a/tp-yt-paper-button/yt-icon')
-filtr0.click()
+icon = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/div/ytd-toggle-button-renderer/a/tp-yt-paper-button/yt-icon')
+icon.click()
 filtr1 = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/iron-collapse/div/ytd-search-filter-group-renderer[5]/ytd-search-filter-renderer[1]/a/div/yt-formatted-string')
 filtr2 = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/iron-collapse/div/ytd-search-filter-group-renderer[5]/ytd-search-filter-renderer[2]/a/div/yt-formatted-string')
 filtr3 = driver.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[1]/div[2]/ytd-search-sub-menu-renderer/div[1]/iron-collapse/div/ytd-search-filter-group-renderer[5]/ytd-search-filter-renderer[3]/a/div/yt-formatted-string')
